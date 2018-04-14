@@ -37,7 +37,7 @@ var app = app || {};
   };
 
   Article.numWordsAll = () => {
-    return Article.all.map(art => art.body.split(' ').length).reduce((sum,num)=>sum+num)
+    return Article.all.map(art => art.body.split(' ').length).reduce((sum,num)=>sum+num);
   };
 
   Article.allAuthors = () => {
@@ -54,7 +54,7 @@ var app = app || {};
       return {
         author,
         totalWords : Article.all.
-          filter(article => article.author = author).
+          filter(article => article.author === author).
           map(art => art.body.split(' ').length).
           reduce((sum,num)=>sum+num)
       }
